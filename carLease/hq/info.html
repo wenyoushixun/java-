@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户中心-接亲网</title>
+    <meta name="keywords" content="用户中心,接亲,找婚车,接亲流程,传统婚礼,婚车租赁,婚车布置,接亲车队,个性接亲,高端婚礼,定制婚礼,婚庆策划,婚车租赁价格,婚礼筹备,主题婚礼,婚礼流程,婚宴预订,婚宴习俗"/>
+<meta name="description" content="接亲网是城市中共享车辆并提供接亲婚车的领先服务平台，并致力于一站式婚礼筹备信息服务，接亲网能让用户享受到高性价比的婚礼体验，让城市更有人情味。"/>  
+    <meta name="viewport" content="width=1000, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="css/common.css?v=170323" rel="stylesheet" type="text/css" />
+    <link href="css/user.css?v=170323" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="http://www.jieqinwang.com/Public/images/favicon.ico">
+  
+</head>
+<body>
+ <!--[if lt IE 9]>
+<link rel="stylesheet" href="/Theme/Public/css/font-awesome-ie7.min.css">
+ <![endif]-->
+ <!--[if lt IE 8]>
+      <center style="color:#fb5358;line-height:48px">-_-!你的浏览器版本太低，请使用IE7以上版本IE浏览器或者Chrome、火狐浏览器以获得最好体验。</center>
+ <![endif]-->
+  	<div class="top_full">
+  		<div class="top">
+  			<div class="top_left">
+  				<a href="http://www.jieqinwang.com" class="logo" title="接亲网-中国专业的婚车解决方案平台"><img src="http://www.jieqinwang.com/Public/images/pc/logo.png" alt="接亲网"><h1>接亲网</h1></a>
+  				<div class="top_city">
+  					<a id="city" href="http://www.jieqinwang.com/Index/index/changecity/1" title="选择您所在的城市">[ 上海 <i class="fa fa-caret-down"></i> ]</a>
+  				</div>
+  				
+  			</div>
+
+  			<div class="nav">
+  				<ul>
+
+  					<li><a href="http://sh.jieqinwang.com" title="首页">首 页</a></li>
+            		<li><a href="http://sh.jieqinwang.com/search" title="自选婚车">自选婚车</a></li>
+  					<li><a href="http://sh.jieqinwang.com/package" title="婚车套餐">婚车套餐</a></li>
+  					<li><a href="http://sh.jieqinwang.com/register/index/t/1" title="发布车辆">发布车辆</a></li>
+					<li class="drop" id="js_zixun"><a href="http://sh.jieqinwang.com/article" title="结婚必看">结婚必看 <i class="fa fa-angle-down js_nav_no"></i></a>
+						<div class="menu_down js_nav_no">
+			               <a href="http://sh.jieqinwang.com/article" title="结婚资讯">结婚资讯</a>
+                     <a href="http://sh.jieqinwang.com/store" title="结婚商家">结婚商家</a>
+			               <a href="http://www.jieqinwang.com/ask/sh" title="婚车问答">婚车问答</a>
+			             </div>
+					</li>
+  					<li class="drop">
+		              <a href="http://www.jieqinwang.com/help" title="帮助中心">帮助中心</a>
+		            </li>
+  					<li><a href="http://www.jieqinwang.com/download" title="手机端">手机端</a></li>
+  				</ul>
+  			</div>
+
+  					<div class="login_box">
+
+                    <div class="drop">
+           
+            <a id="user_head" href="/User/user_center.html">
+            	
+            	<span id="name">张先生 <i class="fa fa-angle-down"></i></span>
+            </a>    
+
+            <ul class="menu_down">
+              <li><a href="/User/user_center.html">进入个人中心</a></li>
+              <li><a href="/Login/loginOut" id="login_out"><i class="fa fa-power-off fa-fw"></i>退出登录</a></li>
+            </ul>
+          </div>  				
+  			</div>
+  		</div>
+  	</div>
+<div class="login-mask"></div>
+<div class="login">
+	<div class="login_tab">
+		<div class="login_tab_item in">密码登录</div>
+		<span class="form_verline">|</span>
+		<div class="login_tab_item">短信快捷登录</div>
+	</div>
+		<form name="loginform" method="post" action="/Login/doLogin" id="loginform">
+		  <div class="form_holder">
+
+			<div class="form_line">
+                <input type="text" value="" placeholder="手机号" class="form-control signup" name="phone" id="phone" maxlength="11">
+            </div>
+
+            <div class="form_line pwholder js_login_type">
+            	<span class="pwtext">密码</span>
+                <input type="password" value="" placeholder="密码" class="form-control signup" name="password"  id="pass">
+            </div>
+
+            <div class="form_line js_login_type" style="display: none">
+              <input type="text"  placeholder="短信验证码" class="form-control tip" maxlength="4" name="code" id="d_smscode_login" style="width:127px;">
+              <input type="button" class="btn btn-normal gray fr sendcode" id="login_send" value="获取验证码" style="font-size: 14px" />
+            </div>
+
+            <div class="form_line">
+            	<input type="hidden" name="ajax" value="0" id="ajax_login">
+            	<input type="hidden" name="refer_url" value="/Order/order_list/t/1.html ">
+            	<input type="hidden" id="check" name="two_login" value="1">
+            	<a class="btn btn-normal btn-red" id="submit">登 录</a>
+            </div>
+
+            <div class="form_line form_footer f13">
+            	<a class="j_reg">账号注册</a><span class="form_verline">|</span><a href="/reset">忘记密码？</a>
+            </div>
+
+		  </div>
+		</form>
+	<a href="javascript:;" title="关闭" class="mask_close">×</a>
+</div>
+<div class="register">
+	<div class="login-title">
+	</div>
+	<div class="register_user fl" href="http://sh.jieqinwang.com/register">
+		<a href="/register/user" ><i class="fa fa-heart"></i>
+		<h3>结婚新人</h3>
+		<div class="f13 mt5">我要找婚车接亲</div>
+		</a>
+	</div>
+	<div class="register_driver fl">
+		<a href="/register"><i class="fa fa-automobile"></i>
+		<h3>车主注册</h3>
+		<div class="f13">我要发布车辆跑婚车赚钱</div>
+		</a>
+	</div>
+	<a href="javascript:;" title="关闭" class="mask_close">×</a>
+</div>
+
+
+
+    <div class="user_box">
+
+        <div class="user_side">
+          <div class="user_face">
+              <img src="http://www.jieqinwang.com/Public/images/pc/boy.jpg" class="user_face_img">
+                              
+   <div class="f14"><a href="/User/user_center.html">张先生
+	</a></div>   
+    
+</div>       
+               
+        
+<div class="user_menu">
+                          <a id="to_my_tasks" href="/User/user_center.html" ><i class="fa fa-user fa-fw"></i> 个人中心</a>
+              <a id="to_my_tasks" href="/Order/order_list/flag/1.html" class="in"><i class="fa fa-shopping-cart fa-fw"></i> 我的订单</a>
+              <a href="/Order/favorites.html" ><i class="fa fa-heart fa-fw"></i> 收藏婚车</a><a href="/Order/vouchers.html" ><i class="fa fa-money fa-fw"></i> 抵用券</a>
+              <a id="to_my_car" href="/user/settings.html" ><i class="fa fa-cog fa-fw"></i> 个人设置</a></div>
+        </div>
+        <div class="content">
+  <div class="box" id="order">
+    <div class="header_a">
+       <div class="tab">
+         <a href="/Order/wedding_car.html" id="car_acount">已订婚车</a>
+         <a href="/Order/order_list/t/1.html"  data="1" class="in">未支付</a>
+         <a href="/Order/order_list/t/2.html"  data="2" >已支付</a>
+         <a href="/Order/order_list/t/3.html"  data="2" >已完成</a>
+         <a href="/Order/order_list/t/4.html"  data="3" >已关闭</a>
+       </div>
+    </div>
+
+    <div class="p20">
+      <ul>
+                  <div class="empty">未找到相关订单</div>      </ul>
+    </div>
+
+
+
+     <div class="page"></div>
+  </div>
+
+
+    </div>
+</div>
+<div class="footer_cont">
+<div class="footer_full_top">
+      	<ul class="footer_shield">
+      		<li>
+      			<i class="fa fa-rmb"></i>
+      			<h6>价格保障</h6>
+      			一手车源，低于市场价
+      		</li>
+      		<li>
+      			<i class="fa fa-umbrella"></i>
+      			<h6>应急援助</h6>
+      			突发情况，应急车辆援助
+      		</li>
+      		<li>
+      			<i class="fa fa-shield"></i>
+      			<h6>服务保障</h6>
+      			迟到免单，缺席赔双倍
+      		</li>
+      		<li>
+      			<i class="fa fa-phone"></i>
+      			<h6>7×24小时服务</h6>
+      			快速响应，全年无休
+      		</li>
+
+      	</ul>
+      <div class="footer">
+      	<div class="logo">
+      		<p>400-9629-700</p>
+      		<span>全国客服7×24小时服务（仅收市话费）</span><!-- <br>
+            <span>预订婚车客户专线：13818882374</span> -->
+      	</div>
+      	
+      	<div class="help">
+      		<ul>
+      			<p>关于</p>
+      			<li><a href="http://www.jieqinwang.com/help#about" target="_blank">· 关于接亲网</a></li>
+      			<li><a href="http://www.jieqinwang.com/store/enter" target="_blank">· 商家合作</a></li>
+      			<!-- <li><a href="http://www.jieqinwang.com/help/join" target="_blank">· 分站代理</a></li> -->
+      			<li><a href="http://www.jieqinwang.com/help#contact" target="_blank">· 联系方式</a></li>
+      			<li><a href="http://www.jieqinwang.com/sitemaps/sitemap_11.html" target="_blank">· 网站地图</a></li>
+      		</ul>
+              <ul>
+                    <p>条款</p>
+                    <li><a href="http://www.jieqinwang.com/help#yudingxuzhi" target="_blank">· 预订婚车须知</a></li>
+                    <li><a href="http://www.jieqinwang.com/help#chezhuxuzhi" target="_blank">· 车主加入须知</a></li>
+                    <li><a href="http://www.jieqinwang.com/help#fuwuxieyi" target="_blank">· 会员服务协议</a></li>
+                    <li><a href="http://www.jieqinwang.com/help#peifutiaoli" target="_blank">· 违约赔付条例</a></li>
+                    <li><a href="http://www.jieqinwang.com/help#yinsi" target="_blank">· 隐私协议</a></li>
+                    <li><a href="http://www.jieqinwang.com/help#copyright" target="_blank">· 版权声明</a></li>
+              </ul>
+              <ul>
+                    <p>保障</p>
+                    <li><a href="http://www.jieqinwang.com/help#securities" target="_blank">· 支付订金</a></li>
+                    <li><a href="http://www.jieqinwang.com/help#zhengjian" target="_blank">· 车主证件认证</a></li>
+                    <li><a href="http://www.jieqinwang.com/help#baozhengjin" target="_blank">· 出车保证金</a></li>
+              </ul>
+              <ul>
+                    <p>新手</p>
+                    <li><a href="http://www.jieqinwang.com/help#user" target="_blank">· 订车常见问题</a></li>
+                    <li><a href="http://www.jieqinwang.com/help#driver" target="_blank">· 车主常见问题</a></li>
+                    <li><a href="http://www.jieqinwang.com/article" target="_blank">· 结婚资讯</a></li>
+                    <li><a href="http://www.jieqinwang.com/topic" target="_blank">· 焦点专题</a></li>
+                    <li><a href="http://www.jieqinwang.com/ask" target="_blank">· 婚车问答</a></li>
+              </ul>
+      	</div>
+      </div>
+</div>
+<div class="footer_full_bottom">
+	<p><a href="http://www.miitbeian.gov.cn" target="_blank">桂ICP备14005090号-1</a>&emsp;增值电信业务经营许可证：桂B2-20150033&emsp;<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=45030502000016"><img src="http://www.jieqinwang.com/Public/images/pc/beian.png" style="position:relative;top:2px; left:0;margin-right:3px"/>桂公网安备 45030502000016号</a></p>
+	<p>一瓶一钵科技 版权所有©2017&emsp;接亲网 中国专业的婚车解决方案平台</p>
+</div>
+
+<div class="sidebar">
+	<div class="side_icon" id="show_call"><i class="fa fa-phone"></i><i class="fa close_call">×</i></div>
+	<div class="side_icon side_nh js_qq" id="show_meiqia"><b class="side_count" id="unreadNum">0</b><i class="fa fa-comment-o"></i><span class="side_icon_t">在线咨询</span></div>
+	<div class="side_icon side_nh js_cart_icon" id="show_cart"><b class="side_count" id="cart_num">0</b><i class="fa fa-shopping-cart"></i><span class="side_icon_t">购物车</span></div>
+	<a class="side_icon side_nh" href="/demand/post" target="_blank"><i class="fa fa-edit"></i><span class="side_icon_t">婚车需求</span></a>
+	<div class="side_icon side_h" id="to_top"><i class="fa fa-angle-up"></i><span class="side_icon_t">回顶部</span></div>
+
+	<div class="side_call">
+		<i class="fa fa-phone"></i>
+		<div class="call_num f22 mt20">400-9629-700</div>
+		<div class="call_t f12">&ensp;全国客服热线（仅收市话费）</div>
+			</div>
+
+</div>
+
+<div class="cart_holder">
+	    <div class="cart_title">购物车<div class="cart_close">×</div></div>
+	    <div class="cart_list"><div class="cart_empty">您还没有添加婚车</div></div>
+</div>
+
+
+</div>
+
+<script type="text/javascript" src="http://www.jieqinwang.com/Public/js/pc/common.js"></script>
+<script type="text/javascript">
+	
+$(function(){
+
+$(".drop").on("mouseenter",function(){
+      m=$(this).find(".menu_down");
+      if(m.is(":animated")==false){
+        m.slideDown(250);
+      }
+    }).on("mouseleave",function(){
+      m.slideUp(250);
+    });
+
+
+var login_type = 0;
+$(".login_tab_item").click(function(){
+  var _this=$(this);
+  login_type = _this.index(".login_tab_item");
+  _this.addClass("in").siblings().removeClass("in");
+  $(".js_login_type").eq(_this.index(".login_tab_item")).show().siblings(".js_login_type").hide();
+})
+
+
+   $('#phone').poshytip({
+        content: '请输入正确的手机号',
+        showOn: 'none',
+        alignX: 'right',
+        alignTo: 'target',
+        alignY: 'center',
+        offsetX: 16,
+        fade: false,
+        slide: false,
+        showTimeout: 1
+    });
+
+  $('#pass').poshytip({
+        content: '您密码没填对啊！',
+        showOn: 'none',
+        alignX: 'right',
+        alignTo: 'target',
+        alignY: 'center',
+        offsetX: 16,
+        fade: false,
+        slide: false,
+        showTimeout: 1
+    });
+
+    $('#d_smscode_login').poshytip({
+        content: '您验证码没填对啊！',
+        showOn: 'none',
+        alignX: 'left',
+        alignTo: 'target',
+        alignY: 'center',
+        offsetX: 16,
+        fade: false,
+        slide: false,
+        showTimeout: 1
+    });
+
+  $('.j_login').click(function(){
+    $('.login-mask').fadeIn(200);
+    $('.login').slideDown(200);
+  })
+  $('.j_reg').click(function(){
+    $('.login-mask').fadeIn(200);
+    $('.register').slideDown(200);
+    $("*").poshytip("hide");
+  })
+  $('.mask_close').click(function(){
+    $('.login-mask').fadeOut(200);
+    $('.login,.register').slideUp(200);
+    $(".signup").poshytip("hide");
+    $(".signup").css("border-color", "");
+  })
+  $('.login-mask').click(function(){
+    $('.login-mask').fadeOut(200);
+    $('.login,.register').slideUp(200);
+    $(".signup").poshytip("hide");
+    $(".signup").css("border-color", "");
+  })
+
+  //登陆检测
+  $("#pass").click(function(){
+     if($("#phone").val() === ''||sms_plugin.isDigit($("#phone").val())==false||$("#phone").val() == '手机号')
+     {
+      $("#phone").poshytip("update","请输入正确的手机号");
+      $("#phone").poshytip("show");
+      $("#phone").css("border-color", "#eb282e");
+      return false;
+     }
+  
+      $.post('/Login/doCheck',{'phone':$("#phone").val()},function(data){
+        if(data == 1)
+         {
+            $("#phone").poshytip("update","这个手机还没有注册，赶紧注册一个吧");
+            $("#phone").poshytip("show");
+            $("#phone").css("border-color", "#eb282e");
+         }else{
+            $("#phone").poshytip("hide");
+            $("#phone").css("border-color", "");
+         }
+      });
+      
+  });
+  
+
+  //
+  $("#submit").click(function(){
+     var phone = $("#phone").val();
+     var pass = $("#pass").val();
+     var code = $("#d_smscode_login").val();
+     if(phone === ''||sms_plugin.isDigit(phone)==false||phone == '手机号')
+     {
+
+      $("#phone").poshytip("show");
+      $("#phone").css("border-color", "#eb282e");
+      return false;
+     }
+
+     if(pass===''&&login_type==0)
+     {
+
+      $("#pass").poshytip("show");
+      $("#pass").css("border-color", "#eb282e");
+      return false;
+     }
+
+     if(code===''&&login_type==1)
+     {
+      $("#d_smscode_login").poshytip("update","验证码不能为空");
+      $("#d_smscode_login").poshytip("show");
+      $("#d_smscode_login").css("border-color", "#eb282e");
+      return false;
+     }
+
+       $.post("/Login/doCheck",{'phone':phone,'password':pass,'code':code},function(data){
+
+         if(data == 3)  
+         {
+          $("#submit").html("登录中...");
+          if($('input[name=ajax]').val()==1)
+          {
+            $.post("/Login/doLogin", {'phone':phone,'password':pass,'ajax':1},function(d)
+              {
+                if(d!=5){
+                   $(".mask_close").click();
+                   $(".login_box").html(d);
+                   $(".drop").on("mouseenter",function(){
+                        m=$(this).find(".menu_down");
+                        if(m.is(":animated")==false){
+                          m.slideDown(250);
+                        }
+                      }).on("mouseleave",function(){
+                        m.slideUp(250);
+                      });
+                   $('.submit').click();
+                    $(".after").hover(function(){
+                        if($(".after ul").is(":animated")==false){
+                          $(".after ul").slideDown("fast");
+                          $(this).css("background","#d9252a");
+                        }
+                      },function(){
+                        $(".after ul").slideUp("fast");
+                        $(this).css("background","#eb282e");
+                      });
+                }else alert("登录失败，请检查信息是否填写正确");
+              });
+          }else{
+            
+            $("#loginform").submit();
+          }
+          
+         }
+         if(data == 1 && login_type==0)
+         {
+            $("#phone").poshytip("update","该手机号未注册");
+            $("#phone").poshytip("show");
+            $("#phone").css("border-color", "#eb282e");
+         }
+         if(data == 2)
+         {
+            if(login_type==0){
+              $("#pass").poshytip("update","密码不对哦");
+              $("#pass").poshytip("show");
+              $("#pass").css("border-color", "#eb282e");
+            }else{
+              $("#d_smscode_login").poshytip("update","验证码不对哦");
+              $("#d_smscode_login").poshytip("show");
+              $("#d_smscode_login").css("border-color", "#eb282e");
+            }
+         }
+       });
+     
+  });
+  
+  $("#pass").keydown(function(e){
+    var curKey = e.which;
+    if(curKey == 13){ 
+      $("#submit").click(); 
+      return false; 
+    } 
+  });
+
+
+        $("#login_send").click(function(){
+            var phone=$('#phone').val();
+            $('.tip').poshytip("hide");
+            $("input").poshytip("hide");
+           
+            if (sms_plugin.isDigit(phone)){
+
+              $.post('/Login/doCheck',{'phone':$("#phone").val()},function(data){
+                if(data == 1)
+                 {
+                    $("#phone").poshytip("update","这个手机还没有注册，赶紧注册一个吧");
+                    $("#phone").poshytip("show");
+                    $("#phone").css("border-color", "#eb282e");
+                    return false;
+                 }else{
+                    $("#phone").poshytip("hide");
+                    $("#phone").css("border-color", "");
+
+                      $.post("/Login/code",{'phone':phone},function(d){
+                      
+                        if(d==1) {
+                        sms_plugin.send({id:"login_send"});
+                          setTimeout("var art=dialog({title: '',content:'您的短信验证码可能有延时或被拦截，如果长时间收不到短信验证码，请拨打客服 400-9629-700 （仅收市话费）。',okValue: '确定',ok: function () {}}).show();",60000);
+                        }else if(d>3){
+                          var art = dialog({
+                                  title: '',
+                                  content:'您的手机号码接收验证码可能出现异常，请联系客服<br>400-9629-700 <span class="f13">（仅收市话费）<span>。',
+                                  okValue: '确定',
+                                  ok: function () {window.open("/help#msg")}
+                              });
+                              art.show();
+                        }else{
+                          sms_plugin.send({id:"login_send"});
+                        }
+                      });
+
+                 }
+              });
+
+
+            }else{ 
+                $("#phone").poshytip("update","请输入正确的手机号");
+                $("#phone").poshytip("show");
+            }
+          });
+
+
+
+if("83295"!=""){
+	get_cart();
+	$("#cart_num").css("display","block");
+}
+	$("#show_cart").click(function(){
+		var cart = $(".cart_holder");
+		if(cart.css("display") == "none"){
+			cart.fadeIn(250);
+			$("#cart_num").css("display","none");
+			if("83295"!=""){
+				get_cart();
+		    }
+     
+		}else{
+			cart.fadeOut(250);
+			$("#cart_num").css("display","block");
+		}
+	});
+
+
+$(".cart_close").click(function(){
+	$(".cart_holder").fadeOut(250);
+	$("#cart_num").css("display","block");
+})
+
+    //删除车队
+    $(".cart_holder").on("click",".cart_delete",function(){
+        var del=$(this);
+        var id=del.attr("data");
+         $.get("/Base/delete_car.html",{"id":id},function(d){
+            if(d==1){
+              if($(".cart_item").length==1){
+                  $(".cart_list").html('<div class="cart_empty">购物车里没有婚车了</div>');
+                  $("#cart_num").html("0");
+              }else{
+                del.parents('li').hide(250,function(){
+                    $(this).remove();
+                    var result=parseInt($("#cars_list_num").html())-1;
+                    $("#cars_list_num").html(result);
+                    $("#cart_num").html(result);
+                    var red=0;
+                    var booking=0;
+                    $(".my-cars-hongbao").each(function(){
+                        red+=parseInt($(this).html());
+                    });
+                    $(".my-cars-pay").each(function(){
+                        booking+=parseInt($(this).html());
+                    });
+
+                    $("#reds").html(red);
+                    $("#books").html(booking);
+                 });
+              }
+            }
+         });
+    });
+
+
+	$(document).bind('click',function(e) {
+	    var clickme = $(e.target);  
+	    if ((!clickme.parents().hasClass("cart_holder") && $(".cart_holder").css("display")!="none") && (!clickme.parents().hasClass("js_cart_icon") && clickme.attr("class")!="cart_holder")) {
+	    	$(".cart_close").click();
+	    }
+	 }); 
+
+
+    $("#to_top").click(function(){
+        $('body,html').animate({scrollTop:0},500);
+        return false;
+        });
+
+
+    $("#show_call").click(function(){
+    	var _this=$(this);
+    	if(_this.hasClass("show_call")){
+    		_this.removeClass("show_call");
+    		$(".side_call").fadeOut(250);
+    	}else{
+    		_this.addClass("show_call");
+    		$(".side_call").fadeIn(250);
+    	}
+    });
+
+    $("body").on("click","#MEIQIA-DRAG-MASK",function(){
+    	_MEIQIA('hidePanel');
+    })
+
+    $("#show_meiqia").click(function(){
+    	if($(this).hasClass("js_qq")){
+    		window.open("http://wpa.qq.com/msgrd?v=3&uin=1596807349&site=qq&menu=yes");
+    	}else{
+    		_MEIQIA('showPanel');
+    	}
+    })    
+   
+})
+
+function get_cart(){
+	$.get("/Base/get_mycars.html",function(d){
+		$(".cart_list").html(d);
+		if($("#cars_list_num").length!=0){
+			$("#cart_num").html($("#cars_list_num").html());
+		}
+	});
+}
+
+
+function meiqia_get(msg) {
+	var num = 0;
+	var dom = document.getElementById('unreadNum');
+        if (msg === 'hasBeenRead') { // 消息已被阅读
+        	num = 0;
+        	dom.style.display="none";
+        } else if (typeof(msg) === 'object') {
+        	dom.style.display="block";
+        	var unreadNum = dom.innerHTML,
+        	lastMsg = msg[msg.length - 1];
+        	num = isNaN(+unreadNum) ? msg.length : +unreadNum + msg.length;
+        }
+        dom.innerHTML = num;
+    }
+
+
+    function meiqia_ok(){
+    	$("#show_meiqia").removeClass("js_qq");
+    	$("#MEIQIA-PANEL-HOLDER").css({"height":"550px","width":"360px"}).append('<div id="MEIQIA-DRAG-MASK">×</div>');
+    	_MEIQIA('getUnreadMsg', meiqia_get);
+    }
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6e8ad84455d03b9cac83cc08439afaa7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+    (function(m, ei, q, i, a, j, s) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = '//static.meiqia.com/dist/meiqia.js';
+        s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', 47201);
+    _MEIQIA('withoutBtn');
+    _MEIQIA('allSet', meiqia_ok);
+
+</script>
+<div style="display:none">
+<script src="http://s9.cnzz.com/stat.php?id=1253286446&web_id=1253286446" language="JavaScript"></script><!-- 全站 -->
+</div>
+<script type="text/javascript">
+$(function(){
+
+      $(".js_pay").click(function(){
+       var d = dialog({
+              content: '已经跳转到支付页面',
+              okValue: '支付成功',
+        ok: function () {
+             location = location;
+        },
+        cancelValue: '支付失败',
+        cancel: function () {
+          alert("支付失败请致电客服400-9629-700");
+        }
+          });
+          d.show();
+    });
+
+var is_taocan=0;
+  //套餐相关
+  $(".goods_list li").each(function(){
+    var _this=$(this);
+    if(_this.attr("data-t")=="套餐"){
+      is_taocan=1;
+      var hongbao=_this.find(".goods_info.f13");
+      var tag=_this.find(".not_hcar");
+      var state=_this.find(".goods_info.f12");
+      var a=_this.find("a");
+
+      hongbao.html(hongbao.html().replace("红包","余款"));
+      tag.html(tag.html().replace("跟车","套餐"));
+      if(state.length>0) state.html(state.html().replace("同意接亲","已确认"));
+          a.attr("href",a.attr("href").replace("Details/index","Package/details"));
+    }
+
+  });
+})
+  
+</script>
+</body>
+</html>

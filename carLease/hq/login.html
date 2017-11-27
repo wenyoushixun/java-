@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>婚车租赁</title>
+		<meta name="viewport" content="width=1000, maximum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link href="css/common.css?v=170323" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="css/search/style.css">
+		<link rel="shortcut icon" href="img/favicon.ico">
+
+	</head>
+
+	<body>
+		<div class="top_full">
+			<div class="top">
+				<div class="top_left">
+					<a href="http://www.jieqinwang.com" class="logo" title="婚车租赁-中国专业的婚车解决方案平台"><img src="" alt="婚车租赁">
+						<h1>婚车租赁</h1></a>
+					
+				</div>
+
+				<div class="nav">
+					<ul>
+
+						<li>
+							<a href="http://sh.jieqinwang.com" title="首页">首 页</a>
+						</li>
+						<li>
+							<a href="http://sh.jieqinwang.com/search" title="自选婚车">自选婚车</a>
+						</li>
+						<li>
+							<a href="http://sh.jieqinwang.com/package" title="婚车套餐">婚车套餐</a>
+						</li>
+						<li>
+							<a href="http://sh.jieqinwang.com/register/index/t/1" title="发布车辆">发布车辆</a>
+						</li>
+						<li class="drop" id="js_zixun">
+							<a href="http://sh.jieqinwang.com/article" title="结婚必看">结婚必看 <i class="fa fa-angle-down js_nav_no"></i></a>
+							<div class="menu_down js_nav_no">
+								<a href="http://sh.jieqinwang.com/article" title="结婚资讯">结婚资讯</a>
+								<a href="http://sh.jieqinwang.com/store" title="结婚商家">结婚商家</a>
+								<a href="http://www.jieqinwang.com/ask/sh" title="婚车问答">婚车问答</a>
+							</div>
+						</li>
+						<li class="drop">
+							<a href="http://www.jieqinwang.com/help" title="帮助中心">帮助中心</a>
+						</li>
+						<li>
+							<a href="http://www.jieqinwang.com/download" title="手机端">手机端</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="login_box">
+
+					<div class="before">
+						<a class="j_login">登录</a> /
+						<a class="j_reg">注册</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="login-mask"></div>
+		<div class="login" style="display: block;">
+			<div class="login_tab">
+				<div class="login_tab_item">登录</div>
+			</div>
+			<form name="loginform" method="post" action="/Login/doLogin" id="loginform">
+				<div class="form_holder">
+
+					<div class="form_line">
+						<input type="text" value="" placeholder="手机号" class="form-control signup" name="phone" id="phone" maxlength="11">
+					</div>
+
+					<div class="form_line pwholder js_login_type">
+						<span class="pwtext">密码</span>
+						<input type="password" value="" placeholder="密码" class="form-control signup" name="password" id="pass">
+					</div>
+
+					<div class="form_line js_login_type" style="display: none">
+						<input type="text" placeholder="短信验证码" class="form-control tip" maxlength="4" name="code" id="d_smscode_login" style="width:127px;">
+						<input type="button" class="btn btn-normal gray fr sendcode" id="login_send" value="获取验证码" style="font-size: 14px" />
+					</div>
+
+					<div class="form_line">
+						<input type="hidden" name="ajax" value="0" id="ajax_login">
+						<input type="hidden" name="refer_url" value="/search/index/mashaladi/p1.html ">
+						<input type="hidden" id="check" name="two_login" value="1">
+						<a class="btn btn-normal btn-red" id="submit">登 录</a>
+					</div>
+
+					<div class="form_line form_footer f13">
+						<a class="j_reg">账号注册</a><span class="form_verline">|</span>
+						<a href="/reset">忘记密码？</a>
+					</div>
+
+				</div>
+			</form>
+		</div>
+
+		<script type="text/javascript" src="js/common.js"></script>
+		<div style="display:none">
+	</body>
+
+</html>

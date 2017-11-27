@@ -1,0 +1,24 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
+
+<!--
+            	作者：506056192@qq.com
+            	时间：2017-03-09
+            	描述：分页
+            -->
+			<div class="pagination right">
+				<ul class="pagination pagination-sm no-margin pull-right">
+		<li <c:if test='${currentPage==1}'>class='disabled'</c:if>><a href="javascript: gotoPage(${currentPage-1})">«</a></li>
+		<c:forEach begin="${beginPageIndex}" end="${endPageIndex}" var="num">
+			<li <c:if test='${num==currentPage}'>class='active  disabled'</c:if> ><a href="javascript: gotoPage(${num})" >${num}</a></li>
+		</c:forEach>
+		<li <c:if test='${currentPage==pageCount}'>class='disabled'</c:if>><a href="javascript: gotoPage(${currentPage+1})">»</a></li>
+	</ul>
+			</div>
+
+<script type="text/javascript">
+	function gotoPage( pageNum ){
+		$(document.forms[0]).append("<input type='hidden' name='pageNum' value='" + pageNum +"'>");
+		document.forms[0].submit();
+	}
+</script>
