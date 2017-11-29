@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <taskdef classname="org.hibernate.tool.ant.HibernateToolTask" name="hibernatetool"/>
+  <mkdir dir="target/sql"/>
+  <hibernatetool destdir="target/sql">
+    <annotationconfiguration configurationfile="target/classes/hibernate.cfg.xml"/>
+    <hbm2ddl drop="true" console="false" delimiter=";" outputfilename="db-schema.ddl" format="true" update="false" create="true" haltonerror="true" export="false"/>
+    <classpath>
+      <path location="target/classes"/>
+    </classpath>
+  </hibernatetool>
+</target>
+</project>
