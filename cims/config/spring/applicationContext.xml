@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop 
+		   http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		   http://www.springframework.org/schema/tx 
+		   http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+    
+	<context:component-scan base-package="dao,biz"/>
+	<!-- 读数据库参数文件 
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:config/props/db.properties</value>
+			</list>
+		</property>
+	</bean>-->
+	<!--
+		spring数据源 
+		使用DBCP连接池
+	-->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/cims?useUnicode=true&amp;characterEncoding=utf8" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+		<property name="initialSize" value="2" />
+		<property name="maxActive" value="8" />
+		<property name="maxIdle" value="5" />
+		<property name="minIdle" value="2" />
+		<property name="maxWait" value="3000" />
+		<property name="removeAbandonedTimeout" value="6000" />
+		<property name="removeAbandoned" value="true" />
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">false</prop>
+			</props>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>
+					classpath:hibernate/hbm/Student.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Admin.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Fund.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Notice.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Score.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Sharefile.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Teacher.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Vote.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Voting.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Option.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Question.hbm.xml
+				</value>
+				<value>
+					classpath:hibernate/hbm/Checkin.hbm.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="studentDao" class="dao.impl.StudentDaoImpl">
+		<!-- 注入session工厂，DAO类继承了HibernateDaoSupport类，使用hibernate模板类进行数据操作，
+		HibernateDaoSupport的成员变量hibernateTemplate需要调用createHibernateTemplate(sessionFactory)方法
+		来创建，因此这个property是注入给studentDaoImpl的父类的 -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="adminDao" class="dao.impl.AdminDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="checkinDao" class="dao.impl.CheckinDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="fundDao" class="dao.impl.FundDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="noticeDao" class="dao.impl.NoticeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="scoreDao" class="dao.impl.ScoreDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="fileDao" class="dao.impl.ShareFileDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="teacherDao" class="dao.impl.TeacherDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="voteDao" class="dao.impl.VoteDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+
+	<!-- 配置声明事务管理 -->
+	<!-- 定义事务管理 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 事务规则 -->
+	<tx:advice id="tmAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<!--*通配符 save* 方法名必须是以save开始-->
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="find*" read-only="true" />
+			<!-- read-only 只读：-->
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<!-- point cut -->
+		<aop:pointcut id="pointCut" expression="execution(* com.tarena.biz.*.*(..))" />
+		<aop:advisor advice-ref="tmAdvice" pointcut-ref="pointCut" />
+	</aop:config>
+</beans>

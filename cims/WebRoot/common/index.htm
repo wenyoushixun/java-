@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<title>教务网络管理系统</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="css/Styles_HomeDefault.css" type="text/css">
+
+	</head>
+	<body style="MARGIN: 0px; OVERFLOW: hidden" bgcolor="#f8fffe">
+		<table valign="center" align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+			<tbody>
+				<tr>
+					<td align="center" valign="middle">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" height="440" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" bgcolor="#f8fffe" height="75" valign="top" width="100%">
+										<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+											<tbody>
+												<tr>
+													<td align="center" height="75" valign="middle" width="68%">
+														<img src="images/index_banner.png" border="0" height="75" width="492">
+													</td>
+												</tr>
+												<tr>
+													<td colspan="3" height="20"></td>
+												</tr>
+												<tr>
+													<td>
+														<div style="float: right;">
+															<span style="FONT-SIZE: 10pt; COLOR: #404275">
+															2013年03月12日&nbsp;星期二&nbsp;<br>2012-2013学年第二学期&nbsp;
+															</span>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="258" valign="middle" width="100%">
+										<table align="center" border="0" cellpadding="0" cellspacing="0" height="258" width="100%">
+											<tbody>
+												<tr>
+													<td colspan="2" align="right" background="images/index_border1.gif" height="19" width="100%">
+														<img src="images/index_border1.gif" height="19" width="870">
+													</td>
+												</tr>
+												<tr>
+													<!-- 登录表单 -->
+													<td style="width: 40%;" id="td1" align="center" bgcolor="#cdf2e3" height="215" width="40%">
+														<table width="235" height="80" cellspacing="0" cellpadding="0" border="0">
+														<tbody>
+															<tr>
+																<td width="50" height="26" align="center">身&#12288;份</td>
+																<td valign="top" height="26">
+																	<select name="Sel_Type" onchange="SelType(this)" style="WIDTH: 136px">
+																		<option value="STU">学生</option>
+																		<option value="TEA">教师教辅人员</option>
+																		<option value="SYS">管理人员</option>
+																		<option value="ADM">门户维护员</option>
+																	</select>
+																</td>
+															</tr>
+																<tr>
+																	<td width="50" height="26" align="center" id="UID">
+																		学&#12288;号
+																	</td>
+																	<td valign="top" height="26">
+																		<input type="text" maxlength="20" style="WIDTH: 134px; HEIGHT: 20px" class="tx1" id="UserID" name="UserID">
+																	</td>
+																</tr>
+																<tr>
+																	<td width="50" height="26" align="center" id="PWD">
+																		密&#12288;码
+																	</td>
+																	<td width="120" valign="top" height="26">
+																		<input type="password" value="" name="PassWord" maxlength="25" style="WIDTH:134px;HEIGHT:20px" id="PassWord" class="tx1">
+																	</td>
+																	<td align="center" rowspan="3">
+																		img<img alt="单击可更换图片！" onclick="changeValidateCode();" src="" id="imgCode">
+																	</td>
+																</tr>
+																<tr>
+																	<td width="50" height="26" align="center">验证码</td>
+																	<td width="60" height="26"><input maxlength="4" style="WIDTH:134px;HEIGHT:20px" name="cCode" id="cCode" class="tx1"></td>
+																</tr>
+																<tr>
+																	<td width="50" valign="bottom" height="26"><a href="javascript:void(0)" onclick="showLay('disKeyB')" style="VISIBILITY: hidden" onmouseover="window.status='';return true" id="visKeyB">软键盘</a> <input type="text" name="sbtState" style="VISIBILITY: hidden; WIDTH: 5px; HEIGHT: 5px"><br>
+																	</td>
+																	<td width="168" valign="bottom" height="26" align="left" colspan="2">&nbsp;&nbsp;
+																	<input type="submit" value="登录" class="but20"/>
+																	<input type="reset" value="重置" class="but20"/>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+													<!-- 登录表单End -->
+													<td style="width: 60%;" id="td2" align="right" bgcolor="#cdf2e3" height="215" width="60%">
+														<img src="images/index_bgright.gif">
+													</td>
+												</tr>
+												<tr>
+													<td colspan="2" align="right" background="images/index_border2.gif"
+														height="19" width="100%">
+														<img src="images/index_border2.gif" height="19" width="870">
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" bgcolor="#f8fffe">
+										COPYRIGHT 2000-2013 BY XX ALL RIGHTS RESERVED
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</body>
+</html>

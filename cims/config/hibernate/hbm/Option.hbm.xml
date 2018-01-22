@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entity.Option" table="options" catalog="cims">
+        <id name="optionId" type="java.lang.Integer">
+            <column name="option_id" />
+            <generator class="native"></generator>
+        </id>
+        <many-to-one name="question" class="entity.Question" fetch="select">
+            <column name="question" />
+        </many-to-one>
+        <property name="no" type="java.lang.Integer">
+            <column name="no" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="teacher-package" extends="mis-default" namespace="/teacher">
+	
+		<!-- 教师模块 -->
+		<action name="teacher_*" class="action.TeacherAction" method="{1}">
+			<result name="logined" type="redirectAction">
+				<param name="actionName">teacherPage</param>
+			</result>
+			<result name="loginError">/WEB-INF/jsp/index.jsp</result>
+			<result name="logout" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">index</param>
+			</result>
+		</action>
+		<action name="teacherPage">
+			<result>/WEB-INF/jsp/teacher.jsp</result>
+		</action>
+		
+	</package>
+</struts>

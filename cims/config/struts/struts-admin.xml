@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="admin" extends="mis-default" namespace="/admin">
+		<action name="toAdminPage">
+			<result>/WEB-INF/jsp/admin_page.jsp</result>
+		</action>
+		<action name="toNewStudent"><result>/WEB-INF/jsp/student_add.jsp</result></action>
+		<action name="admin_*" class="action.AdminAction" method="{1}">
+			<result name="login" type="redirectAction">
+				<param name="actionName">toAdminPage</param>
+			</result>
+			<result name="logouted" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">index</param>
+			</result>
+			<result name="loginError">/WEB-INF/jsp/index.jsp</result>
+			<result name="studentMgr">/WEB-INF/jsp/student_mgrList.jsp</result>
+			<result name="addStudent" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="updatedStudent" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="deleteStudent" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="savedFund" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="updatedFund" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="deletedFund" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="addedCheckin" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="addedScore" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="toUpdateStudent">/WEB-INF/jsp/student_update.jsp</result>
+			<result name="toUpdateFund">/WEB-INF/jsp/fund_update.jsp</result>
+			<result name="checkinList">/WEB-INF/jsp/checkin_list.jsp</result>
+			<result name="sname" type="json">
+				<param name="root">msg</param>
+			</result>
+			<result name="toScoreUpdate">/WEB-INF/jsp/score_update.jsp</result>
+			<result name="updatedScore" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="deletedScore" type="json">
+				<param name="root">status</param>
+			</result>
+			
+		</action>
+	</package>
+	
+</struts>

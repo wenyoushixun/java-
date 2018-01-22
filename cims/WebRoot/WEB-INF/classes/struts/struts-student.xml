@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="student-package" extends="mis-default" namespace="/student">
+		<action name="toStudentPage">
+			<result>/WEB-INF/jsp/student.jsp</result>
+		</action>
+		
+		<action name="student_*" class="action.StudentAction" method="{1}"> 
+			<result name="loginError">/WEB-INF/jsp/index.jsp</result>
+			<result name="logined" type="redirectAction">
+				<param name="actionName">toStudentPage</param>
+			</result>
+			<result name="logout" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">index</param>
+			</result>
+			<result name="scores">/WEB-INF/jsp/myscore.jsp</result>
+			<result name="checkins">/WEB-INF/jsp/checkin_list.jsp</result>
+		</action>
+	</package>
+	
+</struts>

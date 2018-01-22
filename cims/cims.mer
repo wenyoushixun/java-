@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="imgr" database="cims" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="admin">
+      <Drawing expanded="true" location="178,970" dimensions="207,89" />
+      <Columns>
+        <Column name="admin_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="admin_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="pwd" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="checkin">
+      <Drawing expanded="true" location="541,400" dimensions="175,108" />
+      <Columns>
+        <Column name="checkin_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="checkdate" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="10" />
+        </Column>
+        <Column name="student" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="type" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="fund">
+      <Drawing expanded="true" location="202,774" dimensions="203,149" />
+      <Columns>
+        <Column name="fund_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="type" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="count" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DOUBLE" size="22" />
+        </Column>
+        <Column name="describ" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="occur_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="10" />
+        </Column>
+        <Column name="balance" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DOUBLE" size="22" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="notice">
+      <Drawing expanded="true" location="-54,774" dimensions="238,169" />
+      <Columns>
+        <Column name="notice_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="title" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="content" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TEXT" size="65535" />
+        </Column>
+        <Column name="publish_time" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="TIMESTAMP" size="19" />
+        </Column>
+        <Column name="publisher" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="publisher_role" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="publisher_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="options">
+      <Drawing expanded="true" location="-81,260" dimensions="200,108" />
+      <Columns>
+        <Column name="option_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="no" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="content" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="question" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="question">
+      <Drawing expanded="true" location="-29,420" dimensions="215,88" />
+      <Columns>
+        <Column name="question_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="content" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="vote" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="score">
+      <Drawing expanded="true" location="502,41" dimensions="203,148" />
+      <Columns>
+        <Column name="score_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="score_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="score" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="credit" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="teacher" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="25" />
+        </Column>
+        <Column name="student" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="sharefile">
+      <Drawing expanded="true" location="338,526" dimensions="228,148" />
+      <Columns>
+        <Column name="file_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="file_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="title" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="describ" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TEXT" size="65535" />
+        </Column>
+        <Column name="student" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="publish_time" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="TIMESTAMP" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="student">
+      <Drawing expanded="true" location="243,229" dimensions="203,169" />
+      <Columns>
+        <Column name="student_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="student_no" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="25" />
+        </Column>
+        <Column name="real_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="25" />
+        </Column>
+        <Column name="pwd" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="25" />
+        </Column>
+        <Column name="genger" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="2" />
+        </Column>
+        <Column name="age" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="role" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="teacher">
+      <Drawing expanded="true" location="-54,965" dimensions="203,149" />
+      <Columns>
+        <Column name="teacher_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="teacher_no" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="25" />
+        </Column>
+        <Column name="real_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="pwd" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="genger" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="2" />
+        </Column>
+        <Column name="age" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="vote">
+      <Drawing expanded="true" location="-37,609" dimensions="212,148" />
+      <Columns>
+        <Column name="vote_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="title" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="describ" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TEXT" size="65535" />
+        </Column>
+        <Column name="student" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="publish_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="10" />
+        </Column>
+        <Column name="end_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="voting">
+      <Drawing expanded="true" location="27,70" dimensions="157,106" />
+      <Columns>
+        <Column name="voting_id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="opt" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="student" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="question" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="checkin_ibfk_1">
+      <Details primary_table="student" foreign_table="checkin">
+        <PrimaryKeys>
+          <ColumnName name="student_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="student" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="options_ibfk_1">
+      <Details primary_table="question" foreign_table="options">
+        <PrimaryKeys>
+          <ColumnName name="question_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="question" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="question_ibfk_1">
+      <Details primary_table="vote" foreign_table="question">
+        <PrimaryKeys>
+          <ColumnName name="vote_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="vote" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="score_ibfk_1">
+      <Details primary_table="student" foreign_table="score">
+        <PrimaryKeys>
+          <ColumnName name="student_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="student" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="sharefile_ibfk_1">
+      <Details primary_table="student" foreign_table="sharefile">
+        <PrimaryKeys>
+          <ColumnName name="student_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="student" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="vote_ibfk_1">
+      <Details primary_table="student" foreign_table="vote">
+        <PrimaryKeys>
+          <ColumnName name="student_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="student" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="voting_ibfk_1">
+      <Details primary_table="options" foreign_table="voting">
+        <PrimaryKeys>
+          <ColumnName name="option_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="opt" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="voting_ibfk_2">
+      <Details primary_table="student" foreign_table="voting">
+        <PrimaryKeys>
+          <ColumnName name="student_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="student" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="voting_ibfk_4">
+      <Details primary_table="question" foreign_table="voting">
+        <PrimaryKeys>
+          <ColumnName name="question_id" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="question" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+

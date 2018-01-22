@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="vote-package" extends="mis-default" namespace="/vote">
+		<action name="vote_*" class="action.VoteAction" method="{1}">
+			<result name="createVotePage">/WEB-INF/jsp/vote_create.jsp</result>
+			<result name="voteMgr">/WEB-INF/jsp/vote_mgr.jsp</result>
+			<result name="addedVote" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="deletedVote" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="detail">/WEB-INF/jsp/vote_detail.jsp</result>
+			<result name="votelist">/WEB-INF/jsp/vote_div.jsp</result>
+			<result name="votePage">/WEB-INF/jsp/vote_voting.jsp</result>
+			<result name="voted"  type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="result">/WEB-INF/jsp/vote_result.jsp</result>
+		</action>
+		
+		<action name="showCreateVote">
+			<result>/WEB-INF/jsp/vote_create.jsp</result>
+		</action>
+	</package>
+</struts>

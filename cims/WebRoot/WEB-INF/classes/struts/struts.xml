@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<!-- 设置开发模式 true:开发模式, false:运营模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 自动加载国际化资源文件 开发阶段设置true  运营阶段设置false -->
+	<constant name="struts.i18n.reload" value="true" />
+	<!-- 自动加载struts配置文件  开发阶段设置true  运营阶段设置false-->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 设置浏览器缓存 true:使用  -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<!-- 设置模板 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 设置统一字符集 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 设置集成spring框架 -->
+	<constant name="struts.objectFactory" value="spring"/>
+	
+	<!-- 引入其它struts配置文件 -->
+	<include file="struts/struts-admin.xml"/>
+	<include file="struts/struts-student.xml"/>
+	<include file="struts/struts-vote.xml"/>
+	<include file="struts/struts-teacher.xml"/>
+
+	<package name="mis-default" extends="json-default">
+		<!-- 全局异常提示页面配置 
+		<global-results>
+			<result name="error">/common/msg.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+		-->
+		
+		<action name="index">
+			<result>/WEB-INF/jsp/index.jsp</result>
+		</action>
+		<!-- 显示考勤面板 -->
+		<action name="toCheckinMgr" class="action.AdminAction" method="findAllStudents">
+			<result name="studentMgr">/WEB-INF/jsp/checkin_mgr.jsp</result>
+		</action>
+		<!-- 显示班费管理面板 -->
+		<action name="showFundMgr" class="action.AdminAction" method="findAllFund">
+			<result name="funds">/WEB-INF/jsp/fund_mgr.jsp</result>
+		</action>
+		<!-- 显示成绩管理面板 -->
+		<action name="toScoreMgr" class="action.AdminAction" method="toScoreMgr">
+			<result name="toScoreMgr">/WEB-INF/jsp/score_mgr.jsp</result>
+		</action>
+		<!-- 获得验证码图片 -->
+		<action name="getVerificationCode" class="action.ImageCodeAction" method="genImageCode">
+			<result name="success" type="stream">
+				<param name="inputName">is</param>
+			</result>
+		</action>
+		<!-- 判断用户输入的验证码 -->
+		<action name="validateCode" class="action.ImageCodeAction" method="validateCode">
+			<result name="validatecode" type="json">
+				<param name="root">checkResult</param>
+			</result>
+		</action>
+		
+		<!-- 通知管理模块 -->
+		<action name="notice_*" class="action.NoticeAction" method="{1}">
+			<result name="noticeMgr">/WEB-INF/jsp/notice_mgr.jsp</result>
+			<result name="savedNotice" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="updated" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="deleted" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="upadtePage">/WEB-INF/jsp/notice_update.jsp</result>
+			<result name="myNotices">/WEB-INF/jsp/mynotice.jsp</result>
+			<result name="noticediv">/WEB-INF/jsp/notice_div.jsp</result>
+			<result name="detail">/WEB-INF/jsp/notice_detail.jsp</result>
+		</action>
+		
+		<!-- 文件共享模块 -->
+		<action name="file_*" class="action.FileAction" method="{1}">
+			<result name="fileMgr">/WEB-INF/jsp/sharefile_mgr.jsp</result>
+			<result name="savedProduct" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="myfiles">/WEB-INF/jsp/myfiles.jsp</result>
+			<result name="updatePage">/WEB-INF/jsp/updatefile.jsp</result>
+			<result name="updated" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="deleted" type="json">
+				<param name="root">status</param>
+			</result>
+			<result name="filediv">/WEB-INF/jsp/file_div.jsp</result>
+			<result name="detail">/WEB-INF/jsp/file_detail.jsp</result>
+			<result name="download" type="stream">
+				<param name="inputName">is</param>
+				<param name="contentType">application/octet-stream</param>
+			</result>
+		</action>
+		
+	</package>
+	
+	
+</struts>
